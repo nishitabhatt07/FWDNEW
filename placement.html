@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Placements</title>
+
+    <link rel="stylesheet" href="../css/style.css?v=3">
+    <link rel="stylesheet" href="../css/placement.css?v=3">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <div class="logo">
+        <h2>SAU</h2>
+        <p>SouthAsianPulse</p>
+    </div>
+
+    <a href="department-dashboard.html">
+        <i class="fas fa-home"></i> Dashboard
+    </a>
+
+    <a href="quiz.html">
+        <i class="fas fa-book"></i> Quizzes
+    </a>
+
+    <a href="placement.html">
+        <i class="fas fa-briefcase"></i> Placements
+    </a>
+
+    <a href="resources.html">
+        <i class="fas fa-folder"></i> Resources
+    </a>
+
+    <a href="hackathons.html">
+        <i class="fas fa-rocket"></i> Hackathons
+    </a>
+
+    <a href="faculty.html">
+        <i class="fas fa-user-tie"></i> Faculty
+    </a>
+
+    <a href="events.html">
+        <i class="fas fa-calendar"></i> Events
+    </a>
+
+    <a href="../index.html">
+        <i class="fas fa-arrow-left"></i> Back
+    </a>
+
+</div>
+
+<div class="main">
+
+    <!-- Header -->
+
+    <div class="header">
+
+        <h1>💼 Placement Opportunities</h1>
+
+        <div class="header-actions">
+
+            <a href="notification.html"
+                class="icon-btn">
+
+                <i class="fas fa-bell"></i>
+
+                <span class="notification-count">
+                    4
+                </span>
+
+            </a>
+
+            <a href="events.html"
+                class="icon-btn">
+
+                <i class="fas fa-calendar-alt"></i>
+
+                <span class="notification-count">
+                    3
+                </span>
+
+            </a>
+
+            <button id="modeBtn"
+                    class="dark-btn">
+                🌙
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- Hero -->
+
+    <div class="hero">
+
+        <h2>Placement Portal</h2>
+
+        <p>
+            Search internships and placement
+            opportunities available for students.
+        </p>
+
+    </div>
+
+    <!-- Search + Filters -->
+
+    <div class="search-filter">
+
+        <input type="text"
+               id="searchInput"
+               placeholder="Search company...">
+
+        <select id="locationFilter">
+
+            <option value="all">
+                All Locations
+            </option>
+
+            <option value="Bengaluru">
+                Bengaluru
+            </option>
+
+            <option value="Hyderabad">
+                Hyderabad
+            </option>
+
+            <option value="Mumbai">
+                Mumbai
+            </option>
+
+            <option value="Pune">
+                Pune
+            </option>
+
+            <option value="Gurugram">
+                Gurugram
+            </option>
+
+        </select>
+
+        <select id="typeFilter">
+
+            <option value="all">
+                All Types
+            </option>
+
+            <option value="Internship">
+                Internship
+            </option>
+
+            <option value="Full Time">
+                Full Time
+            </option>
+
+        </select>
+
+        <select id="sortBy">
+
+            <option value="none">
+                Sort By
+            </option>
+
+            <option value="deadline">
+                Deadline
+            </option>
+
+        </select>
+
+    </div>
+
+    <!-- Placements -->
+
+    <div class="cards">
+
+        <div class="card placement-card"
+             data-company="Google"
+             data-location="Bengaluru"
+             data-type="Internship"
+             data-deadline="2026-11-25">
+
+            <h3>Google Internship</h3>
+
+            <p>Role: Software Engineering Intern</p>
+
+            <p>Location: Bengaluru</p>
+
+            <p>Type: Internship</p>
+
+            <p>Deadline: 25 November</p>
+
+            <button class="apply-btn"
+                onclick="openModal('https://careers.google.com/')">
+
+                Apply Now
+
+            </button>
+
+        </div>
+
+        <div class="card placement-card"
+             data-company="Infosys"
+             data-location="Hyderabad"
+             data-type="Full Time"
+             data-deadline="2026-11-28">
+
+            <h3>Infosys Hiring</h3>
+
+            <p>Role: System Engineer</p>
+
+            <p>Location: Hyderabad</p>
+
+            <p>Type: Full Time</p>
+
+            <p>Deadline: 28 November</p>
+
+            <button class="apply-btn"
+                onclick="openModal('https://www.infosys.com/careers/')">
+
+                Apply Now
+
+            </button>
+
+        </div>
+
+        <div class="card placement-card"
+             data-company="Deloitte"
+             data-location="Gurugram"
+             data-type="Full Time"
+             data-deadline="2026-11-30">
+
+            <h3>Deloitte Analyst</h3>
+
+            <p>Role: Analyst Trainee</p>
+
+            <p>Location: Gurugram</p>
+
+            <p>Type: Full Time</p>
+
+            <p>Deadline: 30 November</p>
+
+            <button class="apply-btn"
+                onclick="openModal('https://www2.deloitte.com/')">
+
+                Apply Now
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Modal -->
+
+<div id="applyModal"
+     class="modal">
+
+    <div class="modal-content">
+
+        <h3>Confirm Application</h3>
+
+        <p>
+            You will be redirected to
+            the company's career page.
+        </p>
+
+        <div class="modal-buttons">
+
+            <button id="confirmApply">
+                Proceed
+            </button>
+
+            <button onclick="closeModal()">
+                Cancel
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js?v=3"></script>
+<script src="placement.js?v=3"></script>
+
+</body>
+</html>
