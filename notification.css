@@ -1,0 +1,80 @@
+.notification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 20px;
+}
+
+.notification-card {
+    --notification-accent: #667eea;
+    position: relative;
+    min-width: 0;
+    padding: 24px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e8eaf3;
+    border-left: 5px solid var(--notification-accent);
+    border-radius: 18px;
+    box-shadow: 0 8px 24px rgba(31, 41, 55, 0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.notification-card h3 {
+    margin-bottom: 12px;
+    color: var(--notification-accent);
+    font-size: 1.05rem;
+    line-height: 1.4;
+}
+
+.notification-card p {
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.notification-card.high {
+    --notification-accent: #dc4c64;
+}
+
+.notification-card.academic {
+    --notification-accent: #5574db;
+}
+
+.notification-card.placement {
+    --notification-accent: #168a75;
+}
+
+.dark .notification-card {
+    background: #2a3448;
+    border-color: #3b465c;
+    border-left-color: var(--notification-accent);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+}
+
+.dark .notification-card p {
+    color: #d1d5db;
+}
+
+@media (hover: hover) {
+    .notification-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 30px rgba(31, 41, 55, 0.12);
+    }
+}
+
+@media (max-width: 600px) {
+    .notification-grid {
+        gap: 14px;
+    }
+
+    .notification-card {
+        padding: 20px;
+        border-radius: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .notification-card {
+        transition: none;
+    }
+}
